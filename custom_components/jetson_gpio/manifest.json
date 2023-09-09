@@ -1,0 +1,14 @@
+{
+  "domain": "jetson_gpio",
+  "name": "Jetson GPIO",
+  "codeowners": [
+    "@tomas1808"
+  ],
+  "documentation": "",
+  "iot_class": "local_push",
+  "issue_tracker": "",
+  "requirements": [
+    "Jetson.GPIO==2.1.1"
+  ],
+  "version": "1.0.0"
+}
