@@ -1,7 +1,7 @@
 """Support for controlling GPIO pins of a Jetson."""
 
 from homeassistant.const import (
-    EVENT_HOMEASSISTANT_START,
+    EVENT_HOMEASSISTANT_STARTED,
     EVENT_HOMEASSISTANT_STOP,
     Platform,
 )
@@ -28,8 +28,8 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
         """Stuff to do when Home Assistant starts."""
         hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, cleanup_gpio)
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_START, prepare_gpio)
-    JetsonGPIO.setmode(JetsonGPIO.BCM)
+    hass.bus.listen_once(EVENT_HOMEASSISTANT_STARTED, prepare_gpio)
+    JetsonGPIO.setmode(JetsonGPIO.BOARD)
     return True
 
 
